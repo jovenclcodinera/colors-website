@@ -1,0 +1,190 @@
+.navbar {
+    background: #131313;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        list-style: none;
+    }
+
+    &__item {
+        height: 80px;
+    }
+    &__links {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 125px;
+        text-decoration: none;
+        height: 100%;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: #9518fc;
+            transition: all 0.3s ease;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 1rem;
+        width: 100%;
+    }
+}
+
+#navbar {
+    &__logo {
+        background-color: #ff8177;
+        background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+        @include changeBackgroundToTextColor();
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 2rem;
+    }
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #833ab4;
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #8331b4);
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #8331b4);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 960px) {
+    .navbar {
+        &__container {
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+            z-index: 1;
+            width: 100%;
+            max-width: 1300px;
+            padding: 0;
+        }
+
+        &__menu {
+            display: grid;
+            grid-template-columns: auto;
+            margin: 0;
+            width: 100%;
+            position: absolute;
+            top: -1000px;
+            opacity: 1;
+            transition: all 0.5s ease;
+            z-index: -1;
+            // background: #131313;
+
+            &.active {
+                background: #131313;
+                top: 100%;
+                opacity: 1;
+                transition: all 0.5s ease;
+                z-index: 99;
+                height: 60vh;
+                font-size: 1.6rem;
+            }
+        }
+
+        &__toggle .bar {
+            width: 24px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+            background: white;
+        }
+
+        &__item {
+            width: 100%;
+        }
+
+        &__links {
+            text-align: center;
+            padding: 2rem;
+            width: 100%;
+            display: table;
+        }
+
+        &__btn {
+            padding-bottom: 2rem;
+        }
+
+        &__toggle .bar {
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+    #navbar {
+        &__logo {
+            padding-left: 25px;
+        }
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 80px;
+        margin: 0;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+
+        &.is-active {
+            .bar {
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:first-child {
+                    transform: translateY(8px) rotate(45deg);
+                }
+
+                &:last-child {
+                    transform: translateY(-8px) rotate(-45deg);
+                }
+            }
+        }
+    }
+}

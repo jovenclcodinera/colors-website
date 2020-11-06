@@ -1,0 +1,54 @@
+.hero {
+    background: #000000;
+    background: linear-gradient(to right, #161616, #000000);
+    padding: 200px 0;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 90%;
+        text-align: center;
+        padding: 30px;
+    }
+
+    &__heading {
+        font-size: 100px;
+        margin-bottom: 24px;
+        color: white;
+        
+        span {
+            background: #ee0979;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            @include changeBackgroundToTextColor();
+        }
+    }
+
+    &__description {
+        font-size: 60px;
+        background: #da22ff;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #9114ff, #da22ff);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #8f0eff, #da22ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        @include changeBackgroundToTextColor();
+    }
+}
+
+.highlight {
+    border-bottom: 4px solid rgb(132, 0, 255);
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        &__heading {
+            font-size: 60px;
+        }
+
+        &__description {
+            font-size: 40px;
+        }
+    }
+}

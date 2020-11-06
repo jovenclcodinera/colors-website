@@ -1,0 +1,34 @@
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+@mixin changeBackgroundToTextColor() {
+    background-size: 100%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+@mixin makeGradientColorText($backgroundColor, $grad1Color, $grad2Color) {
+    background-color:$backgroundColor;
+    background-image: linear-gradient(to top, $grad1Color 0%, $grad2Color 100%);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+@import './navbar';
+@import './hero';
+@import './about';
+@import './services';
+@import './footer';
